@@ -181,7 +181,7 @@ body {
   display: flex;
   gap: 6rem;
   width: max-content;
-  animation: marquee 30s linear infinite;
+  animation: marquee 45s linear infinite;
 }
 
 .marquee-logo {
