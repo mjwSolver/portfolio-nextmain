@@ -23,18 +23,18 @@
       }
     ],
     "tech_logos": [
-      "snowflake.png", 
-      "databricks.png", 
-      "python.png", 
-      "ibm.png",
-      "sql.png",
-      "streamlit.png",
-      "swift.png", 
-      "typescript.png", 
-      "tensorflow.png", 
-      "azure.png",
-      "figma.png",
-      "nextjs.png"
+      "snowflake.svg", 
+      "databricks.svg", 
+      "python.svg", 
+      "ibm.svg",
+      "sql.svg",
+      "streamlit.svg",
+      "swift.svg", 
+      "typescript.svg", 
+      "tensorflow.svg", 
+      "azure.svg",
+      "figma.svg",
+      "nextjs.svg"
     ]
   },
   "education": {

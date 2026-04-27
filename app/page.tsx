@@ -55,7 +55,12 @@ export default function Home() {
       <div className="logo-marquee-container">
         <div className="logo-marquee">
           {[...personal_info.tech_logos, ...personal_info.tech_logos, ...personal_info.tech_logos].map((logo, index) => (
-            <img key={index} src={`/assets/${encodeURIComponent(logo)}`} alt="Tech Logo" className="marquee-logo" />
+            <img 
+              key={index} 
+              src={`/assets/${encodeURIComponent(logo)}`} 
+              alt={logo.split('.')[0]} 
+              className="marquee-logo" 
+            />
           ))}
         </div>
       </div>
