@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Marcell Jeremy Wiradinata | Professional Portfolio
 
-## Getting Started
+A high-end, premium professional portfolio built with **Next.js 15+** and **Tailwind CSS v4**, designed to showcase the intersection of Strategy Consulting, Data Science, and Software Engineering.
 
-First, run the development server:
+![Portfolio Preview](public/assets/MarcellJW%20Simple%20Portfolio.jpg)
+
+## 🚀 Key Features
+
+- **Dynamic Content System**: Powered by a single `data.json` source of truth for easy updates across all sections.
+- **Premium Design System**: Implements a sleek **Glassmorphism** UI with a custom **White & Sky Blue** palette.
+- **Interactive Tech Marquee**: A custom, infinite-scrolling gallery of high-quality, transparent tech logos (Snowflake, Databricks, Python, Streamlit, etc.).
+- **Cursor Glow Effect**: A soft, Sky Blue interactive glow that follows the mouse movement for a dynamic user experience.
+- **Project Deep-Dives**: Dynamic routing for detailed project views, optimized for SEO and readability.
+- **Professional Timeline**: A clean, vertical journey showcasing experiences from **Metrodata**, **EY-Parthenon**, **Dongseo University**, and the **Apple Developer Academy**.
+
+## 🛠️ Tech Stack
+
+- **Framework**: [Next.js 15+](https://nextjs.org/) (App Router)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Icons & Graphics**: Custom PNG/SVG assets from Wikimedia Commons
+- **Typography**: [Inter](https://rsms.me/inter/) via Google Fonts
+
+## 📦 Getting Started
+
+### 1. Installation
+
+```bash
+cd portfolio-nextmain
+npm install
+```
+
+### 2. Development
+
+Run the development server with Turbopack:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3. Updating Content
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To update your bio, experiences, or projects, simply modify the `app/data.json` file. The UI will automatically reflect these changes.
 
-## Learn More
+## 🚢 Deployment
 
-To learn more about Next.js, take a look at the following resources:
+The recommended deployment platform is [Vercel](https://vercel.com).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Push your code to a GitHub repository.
+2. Connect the repository to Vercel.
+3. Vercel will automatically detect the Next.js project and deploy it.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📄 License
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Created by Marcell Jeremy Wiradinata. All rights reserved.
