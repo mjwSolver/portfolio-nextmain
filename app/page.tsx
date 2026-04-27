@@ -209,7 +209,7 @@ export default function Home() {
 
       <footer className="footer">
         <p style={{ fontWeight: 800 }}>© 2025 {personal_info.name}</p>
-        <p style={{ marginTop: '0.5rem' }}>Crafted with Next.js & Pure CSS</p>
+        <p style={{ marginTop: '0.5rem' }}>Crafted with Next.js & Tailwind v4</p>
       </footer>
     </div>
   );

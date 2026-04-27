@@ -22,7 +22,18 @@
         "description": "Exploring the latest AI technology by developing custom MCP servers and autonomous agentic workflows."
       }
     ],
-    "tech_logos": ["snowflake.png", "databricks.png", "python.png", "swift.png", "typescript.png", "tensorflow.png", "nextjs.png"]
+    "tech_logos": [
+      "snowflake.png", 
+      "databricks.png", 
+      "python.png", 
+      "streamlit.png",
+      "swift.png", 
+      "typescript.png", 
+      "tensorflow.png", 
+      "azure.png",
+      "figma.png",
+      "nextjs.png"
+    ]
   },
   "education": {
     "school": "Universitas Ciputra Surabaya",
