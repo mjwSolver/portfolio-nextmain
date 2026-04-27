@@ -2,7 +2,7 @@
 
 A high-end, premium professional portfolio built with **Next.js 15+** and **Tailwind CSS v4**, designed to showcase the intersection of Strategy Consulting, Data Science, and Software Engineering.
 
-![Portfolio Preview](public/assets/MarcellJW%20Simple%20Portfolio.jpg)
+![Portfolio Preview](public/assets/portfolio-preview.png)
 
 ## 🚀 Key Features
 
