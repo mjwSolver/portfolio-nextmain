@@ -1,0 +1,139 @@
+{
+  "personal_info": {
+    "name": "Marcell Jeremy Wiradinata",
+    "title": "Software Engineer & Data Scientist",
+    "bio": "Functional Consultant Associate & Data Scientist at PT. Metrodata Electronics Tbk. Currently developing a Financial Analytics Dashboard on Snowflake for a Japanese-based Enterprise client.",
+    "email": "mjwiradinata@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/marcell-jeremy-wiradinata-id",
+    "github": "https://github.com/mjwSolver",
+    "skills": {
+      "Technical": ["Snowflake", "Databricks", "Swift", "Python", "TypeScript", "TensorFlow", "SQL", "Azure AI"],
+      "Design & Strategy": ["Figma", "UI/UX Design", "Excel Modeling", "Market Research", "Agile Method"]
+    },
+    "currently_building": [
+      {
+        "title": "Financial Analytics Dashboard",
+        "context": "Metrodata | Snowflake | Japanese-based Enterprise",
+        "description": "Enterprise-scale data visualization and analytics platform built on Snowflake for high-stakes financial reporting."
+      },
+      {
+        "title": "AI Agent Workflows & MCP Server",
+        "context": "Side Project | LLMs | Agentic Workflows",
+        "description": "Exploring the latest AI technology by developing custom MCP servers and autonomous agentic workflows."
+      }
+    ],
+    "tech_logos": ["snowflake.png", "databricks.png", "python.png", "swift.png", "typescript.png", "tensorflow.png", "nextjs.png"]
+  },
+  "education": {
+    "school": "Universitas Ciputra Surabaya",
+    "major": "Informatics (Specialization in AI)",
+    "period": "2021 - 2025",
+    "score": "IPK 3.90 / 4.00",
+    "status": "Cum Laude",
+    "description": "Focused on Deep Learning for Computer Vision and Medical Image Analysis."
+  },
+  "experience": [
+    {
+      "company": "PT. Metrodata Electronics Tbk.",
+      "role": "Functional Consultant Associate (Data Scientist)",
+      "period": "October 2025 - Present",
+      "description": "Data Scientist focusing on Snowflake and Databricks implementations. Leading front-end development for enterprise projects and actively participating in high-stakes bidding processes.",
+      "category": "Data",
+      "images": []
+    },
+    {
+      "company": "EY-Parthenon",
+      "role": "Strategy Consultant",
+      "period": "January 2025 - May 2025",
+      "description": "Commercial Due Diligence for Japanese IT & diverse sectors. Executed data-driven acquisition strategies through Excel modeling and strategic analysis.",
+      "category": "Strategy",
+      "images": ["Marcell at EY.jpg", "Farewell at EY.jpg"]
+    },
+    {
+      "company": "Dongseo University",
+      "role": "Global Korea Scholarship Exchange Student",
+      "period": "August 2023 - December 2023",
+      "description": "Exchange program in Busan, South Korea. Studied Deep Learning, Computer Vision, and Cloud Computing. Immersed in international technical research and cultural exchange.",
+      "category": "Data",
+      "images": ["Me GKS at DSU.jpg", "GKS in front of DSU.jpg"]
+    },
+    {
+      "company": "Apple Developer Academy",
+      "role": "iOS Developer",
+      "period": "March 2024 - December 2024",
+      "description": "Developed FEAR (AR Exposure Therapy) and Tetandingan (3D Offering Guide). Specialized in SwiftUI and User-Centered Design.",
+      "category": "Software",
+      "images": ["FEAR - Apple Developer Academy Final Project.jpg"]
+    }
+  ],
+  "achievements": [
+    {
+      "title": "1st Place FIT 2024 - Mobile Dev",
+      "description": "National Champion. Developed a Smart Parking System for Smart Cities. Led the team as Product Manager and lead presenter.",
+      "image_file": "Juara 1 FIT.jpg"
+    },
+    {
+      "title": "Global Korean Scholarship Awardee",
+      "description": "Selected for South Korean government-funded exchange at Dongseo University, Busan, fostering international technical collaboration.",
+      "image_file": "Me GKS at DSU.jpg"
+    }
+  ],
+  "projects": [
+    {
+      "title": "OsteoMaxNet: IBM Evolution",
+      "category": "Data Science",
+      "description": "An evolution of my final university project implemented in IBM, focusing on scaling classification accuracy and system performance.",
+      "tags": ["IBM", "AI Evolution", "Optimization", "Scalability"],
+      "link": "",
+      "image_file": "OsteoMaxNet.jpg"
+    },
+    {
+      "title": "NasnetMobile: Knee Osteoarthritis Classification",
+      "category": "Data Science",
+      "description": "Final University Project at Universitas Ciputra. Evaluated preprocessing techniques on Nasnetmobile performance for X-ray image-based Knee Osteoarthritis classification. Resulted in a published research paper.",
+      "tags": ["Computer Vision", "Deep Learning", "NasnetMobile", "University"],
+      "link": "https://jurnal.polibatam.ac.id/index.php/JAIC/article/view/8713",
+      "image_file": "MarcellJW - Alt-TA Publikasi Jurnal Poster V2.jpg"
+    },
+    {
+      "title": "Used Car Price Prediction",
+      "category": "Data Science",
+      "description": "Research paper detailing a Machine Learning model built using Python and Pandas to predict used car prices based on multi-dimensional market features.",
+      "tags": ["Python", "Machine Learning", "Pandas", "Research"],
+      "link": "https://www.ijcis.net/index.php/ijcis/article/view/147",
+      "image_file": "Used Car Price Prediction Front Page.jpg"
+    },
+    {
+      "title": "FEAR - iOS Application",
+      "category": "Software",
+      "description": "Developed an iOS application at the Apple Developer Academy focusing on user-centered design and robust Swift implementation.",
+      "tags": ["Swift", "iOS", "Xcode", "UI/UX"],
+      "link": "",
+      "image_file": "FEAR - Apple Developer Academy Final Project.jpg"
+    },
+    {
+      "title": "Tetandingan UI/UX",
+      "category": "Software",
+      "description": "Design and prototyping challenge completed during the Apple Developer Academy, emphasizing usability heuristics and intuitive mobile interactions.",
+      "tags": ["Figma", "UI/UX", "Prototyping"],
+      "link": "",
+      "image_file": "Tetandingan - Apple Developer Academy UI UX Challenge.jpg"
+    },
+    {
+      "title": "Microsoft Enterprise Automation",
+      "category": "Certification",
+      "description": "Spearheaded contributions to a Microsoft-based automation project at EY-Parthenon. Optimized operational continuity and knowledge access through robust system handovers and strategic SharePoint utilization.",
+      "tags": ["SharePoint", "Automation", "Strategy", "Microsoft"],
+      "link": "",
+      "image_file": "Credentials MS Foundation - MarcellJW-6681 _ Microsoft Learn.jpg"
+    },
+    {
+      "title": "IBM Introduction to AI",
+      "category": "Certification",
+      "description": "Professional certification from IBM covering the foundational concepts of Artificial Intelligence, machine learning, and neural networks.",
+      "tags": ["IBM", "Artificial Intelligence", "Foundations"],
+      "link": "",
+      "image_file": "IBM Course.jpg"
+    }
+  ]
+}
