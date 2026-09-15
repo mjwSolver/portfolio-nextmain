@@ -1,42 +1,14 @@
 import data from "./data.json";
 import Link from "next/link";
+import ProjectCatalog from "./components/ProjectCatalog";
+import Navbar from "./components/Navbar";
 
 export default function Home() {
   const { personal_info, projects, experience, achievements, education } = data;
 
-  const groupedProjects = projects.reduce((acc, project) => {
-    const category = project.category;
-    if (!acc[category]) {
-      acc[category] = [];
-    }
-    acc[category].push(project);
-    return acc;
-  }, {} as Record<string, typeof projects>);
-
-  const categories = ["Data Science", "Software", "Certification"];
-
-  const getCategoryColor = (category: string) => {
-    switch (category) {
-      case 'Data Science': return 'emerald';
-      case 'Software': return 'sky';
-      case 'Certification': return 'amber';
-      default: return 'slate';
-    }
-  };
-
   return (
     <div className="portfolio-container">
-      <nav className="navbar">
-        <div className="nav-content">
-          <Link href="/" className="nav-logo">MJW.</Link>
-          <div className="nav-links">
-            <a href="#active">Building</a>
-            <a href="#experience">Experience</a>
-            <a href="#projects">Projects</a>
-            <a href="#skills">Skills</a>
-          </div>
-        </div>
-      </nav>
+      <Navbar />
 
       <header className="hero-section">
         <div>
@@ -155,45 +127,7 @@ export default function Home() {
       </section>
 
       <section id="projects">
-        {categories.map((category) => {
-          const categoryProjects = groupedProjects[category];
-          if (!categoryProjects || categoryProjects.length === 0) return null;
-          const color = getCategoryColor(category);
-
-          return (
-            <div key={category} className="section-padding">
-              <h3 className="section-title">{category}</h3>
-              <div className="projects-grid">
-                {categoryProjects.map((project, index) => (
-                  <div key={index} className="project-card">
-                    <div className="project-image-container">
-                      <img src={`/assets/${encodeURIComponent(project.image_file)}`} alt={project.title} className="project-image" />
-                    </div>
-                    <div className="project-info">
-                      <span className={`tag text-${color}`} style={{ paddingLeft: 0, fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>{project.category}</span>
-                      <h4 style={{ fontSize: '1.25rem', fontWeight: 800, marginBottom: '1rem' }}>{project.title}</h4>
-                      <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', marginBottom: '1.5rem', flexGrow: 1 }}>{project.description}</p>
-                      
-                      <div style={{ marginBottom: '2rem' }}>
-                        {project.tags.map(tag => (
-                          <span key={tag} className={`tag bg-${color}`}>{tag}</span>
-                        ))}
-                      </div>
-                      
-                      <Link 
-                        href={`/project/${encodeURIComponent(project.title)}`}
-                        className={`btn secondary-btn text-${color}`}
-                        style={{ width: '100%', textAlign: 'center', borderColor: 'currentColor', marginTop: 'auto' }}
-                      >
-                        View Project Details
-                      </Link>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          );
-        })}
+        <ProjectCatalog projects={projects} />
       </section>
 
       <section id="skills" className="section-padding">

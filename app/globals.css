@@ -16,6 +16,11 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+}
+
 body {
   background-color: #ffffff;
   background-image: radial-gradient(circle at 15% 50%, var(--primary-light), transparent 25%),

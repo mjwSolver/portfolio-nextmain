@@ -18,6 +18,7 @@ export const metadata: Metadata = {
 };
 
 import CursorEffect from "./components/CursorEffect";
+import BackgroundDecor from "./components/BackgroundDecor";
 
 export default function RootLayout({
   children,
@@ -29,7 +30,8 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col relative">
+        <BackgroundDecor />
         <CursorEffect />
         {children}
       </body>
