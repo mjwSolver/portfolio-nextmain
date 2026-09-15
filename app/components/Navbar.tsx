@@ -34,44 +34,15 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const smoothScrollTo = (targetId: string, duration = 900) => {
-    const targetElement = document.getElementById(targetId);
-    if (!targetElement) return;
-
-    const navOffset = 80; // height of navbar plus breathing room
-    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navOffset;
-    const startPosition = window.pageYOffset;
-    const distance = targetPosition - startPosition;
-    let startTime: number | null = null;
-
-    // Gradual spring-like ease-out curve (overshoot dampening)
-    const springEase = (t: number) => {
-      return 1 - Math.pow(1 - t, 4); // Quartic ease out for gradual, luxurious deceleration
-    };
-
-    const animation = (currentTime: number) => {
-      if (startTime === null) startTime = currentTime;
-      const timeElapsed = currentTime - startTime;
-      const progress = Math.min(timeElapsed / duration, 1);
-      const easeProgress = springEase(progress);
-
-      window.scrollTo(0, startPosition + distance * easeProgress);
-
-      if (timeElapsed < duration) {
-        requestAnimationFrame(animation);
-      } else {
-        window.history.pushState(null, "", `#${targetId}`);
-      }
-    };
-
-    requestAnimationFrame(animation);
-  };
-
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     if (href.startsWith("#")) {
       e.preventDefault();
       const targetId = href.substring(1);
-      smoothScrollTo(targetId, 950);
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+        window.history.pushState(null, "", href);
+      }
     }
   };
 
