@@ -85,7 +85,7 @@
         "name": "Databricks"
       },
       {
-        "file": "python.svg",
+        "file": "python-logo.svg",
         "name": "Python"
       },
       {
@@ -130,11 +130,12 @@
         "label": true
       },
       {
-        "file": "org-ey.svg",
+        "file": "org-ey-parthenon.svg",
         "name": "EY-Parthenon",
-        "width": 69,
-        "height": 69,
-        "label": true
+        "width": 171,
+        "height": 55,
+        "label": false,
+        "display_height": 34
       },
       {
         "file": "org-apple.svg",
@@ -197,7 +198,12 @@
         "SQL",
         "TypeScript"
       ],
-      "images": []
+      "images": [],
+      "logo": {
+        "file": "org-metrodata-mark.png",
+        "width": 106,
+        "height": 66
+      }
     },
     {
       "company": "EY-Parthenon",
@@ -213,7 +219,13 @@
       "images": [
         "Marcell at EY.jpg",
         "Farewell at EY.jpg"
-      ]
+      ],
+      "logo": {
+        "file": "org-ey-parthenon.svg",
+        "width": 171,
+        "height": 55,
+        "wordmark": true
+      }
     },
     {
       "company": "Apple Developer Academy",
@@ -230,7 +242,12 @@
       "images": [
         "FEAR - Apple Developer Academy Final Project.jpg",
         "Tetandingan - Apple Developer Academy UI UX Challenge.jpg"
-      ]
+      ],
+      "logo": {
+        "file": "org-apple.svg",
+        "width": 24,
+        "height": 24
+      }
     },
     {
       "company": "Dongseo University, Busan",
@@ -246,7 +263,13 @@
       "images": [
         "Me GKS at DSU.jpg",
         "GKS in front of DSU.jpg"
-      ]
+      ],
+      "logo": {
+        "file": "org-dongseo-mark.png",
+        "width": 104,
+        "height": 48,
+        "invert": true
+      }
     }
   ],
   "recognition": [
@@ -381,11 +404,17 @@
         ],
         "from": 2023.58,
         "to": 2024.0,
-        "short": "GKS, Busan",
+        "short": "GKS",
         "title": "Global Korea Scholarship",
         "period": "Aug to Dec 2023",
         "detail": "Exchange semester at Dongseo University, Busan. Courses in deep learning, computer vision and cloud computing.",
-        "href": "#experience"
+        "href": "#experience",
+        "logo": {
+          "file": "org-dongseo-mark.png",
+          "width": 104,
+          "height": 48,
+          "invert": true
+        }
       },
       {
         "id": "apple",
@@ -399,7 +428,12 @@
         "title": "Apple Developer Academy",
         "period": "Mar to Dec 2024",
         "detail": "iOS developer. Built FEAR and Tetandingan in Swift and SwiftUI.",
-        "href": "#experience"
+        "href": "#experience",
+        "logo": {
+          "file": "org-apple.svg",
+          "width": 24,
+          "height": 24
+        }
       },
       {
         "id": "fit",
@@ -426,7 +460,13 @@
         "title": "Strategy consultant at EY-Parthenon",
         "period": "Jan to May 2025",
         "detail": "Commercial due diligence for Japanese buyers. I built the market and financial models.",
-        "href": "#experience"
+        "href": "#experience",
+        "logo": {
+          "file": "org-ey-parthenon.svg",
+          "width": 171,
+          "height": 55,
+          "wordmark": true
+        }
       },
       {
         "id": "jaic",
@@ -460,6 +500,11 @@
           "data": "Snowflake and Databricks",
           "strategy": "Technical pre-sales",
           "software": "Front-end lead"
+        },
+        "logo": {
+          "file": "org-metrodata-mark.png",
+          "width": 106,
+          "height": 66
         }
       }
     ]

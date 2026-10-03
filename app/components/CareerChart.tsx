@@ -4,6 +4,7 @@ import { Fragment, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, useInView, useReducedMotion } from "motion/react";
 import { Pause, Play } from "lucide-react";
 import { cn } from "@/lib/utils";
+import LogoTile, { type Logo } from "./LogoTile";
 
 type Lane = { id: string; name: string };
 type Item = {
@@ -20,6 +21,7 @@ type Item = {
   href: string;
   /** For items spanning several lanes: what the work involves in each lane. */
   roles?: Record<string, string>;
+  logo?: Logo;
 };
 
 type Props = {
@@ -176,7 +178,8 @@ export default function CareerChart({ lanes, items, now }: Props) {
                   aria-label={multi ? `${item.title}, ${item.period}` : undefined}
                   {...handlers}
                   className={cn(
-                    "grow-x absolute flex items-center overflow-hidden whitespace-nowrap px-3 text-sm font-medium transition-[background-color,opacity,box-shadow] duration-500",
+                    "grow-x absolute flex items-center overflow-hidden whitespace-nowrap text-sm font-medium transition-[background-color,opacity,box-shadow] duration-500",
+                    item.logo && !multi ? "pl-1.5 pr-3" : "px-3",
                     multi ? "rounded-[1.25rem] bg-ink text-white" : cn("rounded-full", tone.bar, isActive && tone.barActive),
                     isActive ? "shadow-[0_0_0_3px_white,0_0_0_4px_rgba(15,42,68,0.3)]" : "opacity-55",
                   )}
@@ -202,7 +205,15 @@ export default function CareerChart({ lanes, items, now }: Props) {
                       ))}
                     </span>
                   ) : (
-                    <span className="truncate">{item.short}</span>
+                    <span className="flex min-w-0 items-center gap-1.5">
+                      {item.logo && <LogoTile logo={item.logo} size={item.logo.wordmark ? "md" : "sm"} />}
+                      {/* a wordmark already names the organisation */}
+                      {item.logo?.wordmark ? (
+                        <span className="sr-only">{item.short}</span>
+                      ) : (
+                        <span className="truncate">{item.short}</span>
+                      )}
+                    </span>
                   )}
                 </a>
               );
@@ -216,9 +227,12 @@ export default function CareerChart({ lanes, items, now }: Props) {
                       "pop absolute whitespace-nowrap text-sm font-semibold transition-opacity duration-500",
                       !isActive && "opacity-55",
                     )}
-                    style={{ left: pct(from), top: `${first * LANE_H + 0.55}rem`, ...delayFor(from) }}
+                    style={{ left: pct(from), top: `${first * LANE_H + 0.3}rem`, ...delayFor(from) }}
                   >
-                    {item.short}
+                    <span className="flex items-center gap-1.5">
+                      {item.logo && <LogoTile logo={item.logo} size="sm" />}
+                      {item.short}
+                    </span>
                   </span>
                   {bar}
                 </Fragment>
@@ -271,7 +285,8 @@ export default function CareerChart({ lanes, items, now }: Props) {
                 exit={{ opacity: 0, y: -4 }}
                 transition={{ duration: 0.25 }}
               >
-                <p className="flex flex-wrap items-baseline gap-x-3">
+                <p className="flex flex-wrap items-center gap-x-3">
+                  {active.logo && <LogoTile logo={active.logo} size="md" />}
                   <span className="text-lg font-medium">{active.title}</span>
                   <span className={cn("text-sm font-medium", LANE_TONE[active.lanes[0]].label)}>{active.period}</span>
                 </p>
