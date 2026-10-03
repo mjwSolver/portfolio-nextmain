@@ -1,151 +1,512 @@
 {
   "personal_info": {
     "name": "Marcell Jeremy Wiradinata",
-    "title": "Software Engineer & Data Scientist",
-    "bio": "Functional Consultant Associate & Data Scientist at PT. Metrodata Electronics Tbk. Currently developing a Financial Analytics Dashboard on Snowflake for a Japanese-based Enterprise client.",
+    "short_name": "Marcell",
+    "title": "Data Scientist & Software Engineer",
+    "status": "Data scientist at Metrodata",
+    "location": "Indonesia",
+    "bio": "I'm Marcell, a data scientist and software engineer at Metrodata in Indonesia. I work on Snowflake and Databricks projects for enterprise clients and build the front-ends for them.",
     "email": "mjwiradinata@gmail.com",
     "linkedin": "https://www.linkedin.com/in/marcell-jeremy-wiradinata-id",
     "github": "https://github.com/mjwSolver",
-    "skills": {
-      "Technical": ["Snowflake", "Databricks", "Swift", "Python", "TypeScript", "TensorFlow", "SQL", "Azure AI"],
-      "Design & Strategy": ["Figma", "UI/UX Design", "Excel Modeling", "Market Research", "Agile Method"]
-    },
-    "currently_building": [
+    "pillars": [
       {
-        "title": "Financial Analytics Dashboard",
-        "context": "Metrodata | Snowflake | Japanese-based Enterprise",
-        "description": "Enterprise-scale data visualization and analytics platform built on Snowflake for high-stakes financial reporting."
+        "id": "data",
+        "name": "Data science",
+        "capabilities": [
+          "Deep learning for computer vision and medical imaging",
+          "Predictive modeling and feature engineering",
+          "Analytics engineering on Snowflake and Databricks",
+          "Financial reporting and decision dashboards"
+        ],
+        "tools": [
+          "Python",
+          "TensorFlow",
+          "Pandas",
+          "SQL",
+          "Snowflake",
+          "Databricks",
+          "Azure AI"
+        ]
       },
       {
-        "title": "AI Agent Workflows & MCP Server",
-        "context": "Side Project | LLMs | Agentic Workflows",
-        "description": "Exploring the latest AI technology by developing custom MCP servers and autonomous agentic workflows."
+        "id": "strategy",
+        "name": "Strategy",
+        "capabilities": [
+          "Commercial due diligence",
+          "Market research",
+          "Financial modeling in Excel",
+          "Agile delivery"
+        ],
+        "tools": [
+          "Excel",
+          "SharePoint"
+        ]
+      },
+      {
+        "id": "software",
+        "name": "Software engineering",
+        "capabilities": [
+          "Front-end development for enterprise data platforms",
+          "Native iOS and AR apps in Swift and SwiftUI",
+          "LLM agent workflows and custom MCP servers",
+          "User-centered design, from research to prototype"
+        ],
+        "tools": [
+          "TypeScript",
+          "React",
+          "Next.js",
+          "Swift",
+          "SwiftUI",
+          "Streamlit",
+          "Figma"
+        ]
+      }
+    ],
+    "currently_building": [
+      {
+        "title": "Financial analytics platform",
+        "context": "Metrodata, for an enterprise client in Japan",
+        "description": "Data models in Snowflake and the reporting dashboards that the client's finance team uses."
+      },
+      {
+        "title": "MCP servers and agent workflows",
+        "context": "Side project",
+        "description": "Custom Model Context Protocol servers and LLM agent workflows."
       }
     ],
     "tech_logos": [
-      "snowflake.svg", 
-      "python.svg", 
-      "ibm.svg",
-      "sql.svg",
-      "streamlit.svg",
-      "swift.svg", 
-      "typescript.svg", 
-      "tensorflow.svg", 
-      "azure.svg",
-      "figma.svg",
-      "nextjs.svg"
+      {
+        "file": "snowflake.svg",
+        "name": "Snowflake"
+      },
+      {
+        "file": "databricks.svg",
+        "name": "Databricks"
+      },
+      {
+        "file": "python-logo.svg",
+        "name": "Python"
+      },
+      {
+        "file": "tensorflow.svg",
+        "name": "TensorFlow"
+      },
+      {
+        "file": "sql.svg",
+        "name": "SQL"
+      },
+      {
+        "file": "azure.svg",
+        "name": "Azure AI"
+      },
+      {
+        "file": "typescript.svg",
+        "name": "TypeScript"
+      },
+      {
+        "file": "nextjs.svg",
+        "name": "Next.js"
+      },
+      {
+        "file": "swift.svg",
+        "name": "Swift"
+      },
+      {
+        "file": "streamlit.svg",
+        "name": "Streamlit"
+      },
+      {
+        "file": "figma.svg",
+        "name": "Figma"
+      }
+    ],
+    "org_logos": [
+      {
+        "file": "org-metrodata-mark.png",
+        "name": "Metrodata",
+        "width": 106,
+        "height": 66,
+        "label": true
+      },
+      {
+        "file": "org-ey-parthenon.svg",
+        "name": "EY-Parthenon",
+        "width": 171,
+        "height": 55,
+        "label": false,
+        "display_height": 34
+      },
+      {
+        "file": "org-apple.svg",
+        "name": "Apple Developer Academy",
+        "width": 24,
+        "height": 24,
+        "label": true
+      },
+      {
+        "file": "org-ciputra-wordmark.png",
+        "name": "Universitas Ciputra",
+        "width": 640,
+        "height": 65,
+        "label": false
+      },
+      {
+        "file": "org-dongseo.png",
+        "name": "Dongseo University",
+        "width": 233,
+        "height": 48,
+        "label": true,
+        "invert": true
+      },
+      {
+        "file": "ibm.svg",
+        "name": "IBM",
+        "width": 24,
+        "height": 24,
+        "label": true
+      },
+      {
+        "file": "org-microsoft.svg",
+        "name": "Microsoft",
+        "width": 23,
+        "height": 23,
+        "label": true
+      }
     ]
   },
   "education": {
     "school": "Universitas Ciputra Surabaya",
-    "major": "Informatics (Specialization in AI)",
-    "period": "2021 - 2025",
-    "score": "IPK 3.90 / 4.00",
+    "major": "B.Sc. Informatics, artificial intelligence track",
+    "period": "2021 to 2025",
+    "gpa": "3.90",
+    "gpa_scale": "4.00",
     "status": "Cum Laude",
-    "description": "Focused on Deep Learning for Computer Vision and Medical Image Analysis."
+    "description": "I focused on deep learning for computer vision and medical image analysis. My thesis on knee osteoarthritis classification was published in a peer-reviewed journal."
   },
   "experience": [
     {
       "company": "PT. Metrodata Electronics Tbk.",
-      "role": "Functional Consultant Associate (Data Scientist)",
-      "period": "October 2025 - Present",
-      "description": "Data Scientist focusing on Snowflake and Databricks implementations. Leading front-end development for enterprise projects and actively participating in high-stakes bidding processes.",
+      "role": "Data Scientist (Functional Consultant Associate)",
+      "period": "Oct 2025 to now",
+      "description": "I work on Snowflake and Databricks implementations for enterprise clients. I'm building a financial analytics platform for a Japanese company and lead its front-end development. I also support technical pre-sales.",
       "category": "Data",
-      "images": []
+      "stack": [
+        "Snowflake",
+        "Databricks",
+        "Python",
+        "SQL",
+        "TypeScript"
+      ],
+      "images": [],
+      "logo": {
+        "file": "org-metrodata-mark.png",
+        "width": 106,
+        "height": 66
+      }
     },
     {
       "company": "EY-Parthenon",
       "role": "Strategy Consultant",
-      "period": "January 2025 - May 2025",
-      "description": "Commercial Due Diligence for Japanese IT & diverse sectors. Executed data-driven acquisition strategies through Excel modeling and strategic analysis.",
+      "period": "Jan to May 2025",
+      "description": "Commercial due diligence for Japanese companies buying businesses in IT and other sectors. I built the market and financial models in Excel. I also worked on an internal automation project using Microsoft tools.",
       "category": "Strategy",
-      "images": ["Marcell at EY.jpg", "Farewell at EY.jpg"]
-    },
-    {
-      "company": "Dongseo University",
-      "role": "Global Korea Scholarship Exchange Student",
-      "period": "August 2023 - December 2023",
-      "description": "Exchange program in Busan, South Korea. Studied Deep Learning, Computer Vision, and Cloud Computing. Immersed in international technical research and cultural exchange.",
-      "category": "Data",
-      "images": ["Me GKS at DSU.jpg", "GKS in front of DSU.jpg"]
+      "stack": [
+        "Financial modeling",
+        "Market research",
+        "SharePoint"
+      ],
+      "images": [
+        "Marcell at EY.jpg",
+        "Farewell at EY.jpg"
+      ],
+      "logo": {
+        "file": "org-ey-parthenon.svg",
+        "width": 171,
+        "height": 55,
+        "wordmark": true
+      }
     },
     {
       "company": "Apple Developer Academy",
       "role": "iOS Developer",
-      "period": "March 2024 - December 2024",
-      "description": "Developed FEAR (AR Exposure Therapy) and Tetandingan (3D Offering Guide). Specialized in SwiftUI and User-Centered Design.",
+      "period": "Mar to Dec 2024",
+      "description": "I built 2 iOS apps in Swift and SwiftUI with cross-functional teams: FEAR, an augmented-reality app for exposure therapy, and Tetandingan, a 3D guide to traditional offerings.",
       "category": "Software",
-      "images": ["FEAR - Apple Developer Academy Final Project.jpg"]
+      "stack": [
+        "Swift",
+        "SwiftUI",
+        "AR",
+        "Figma"
+      ],
+      "images": [
+        "FEAR - Apple Developer Academy Final Project.jpg",
+        "Tetandingan - Apple Developer Academy UI UX Challenge.jpg"
+      ],
+      "logo": {
+        "file": "org-apple.svg",
+        "width": 24,
+        "height": 24
+      }
+    },
+    {
+      "company": "Dongseo University, Busan",
+      "role": "Global Korea Scholarship Exchange Student",
+      "period": "Aug to Dec 2023",
+      "description": "Exchange semester funded by the Korean government. I took courses in deep learning, computer vision and cloud computing.",
+      "category": "Data",
+      "stack": [
+        "Deep learning",
+        "Computer vision",
+        "Cloud"
+      ],
+      "images": [
+        "Me GKS at DSU.jpg",
+        "GKS in front of DSU.jpg"
+      ],
+      "logo": {
+        "file": "org-dongseo-mark.png",
+        "width": 104,
+        "height": 48,
+        "invert": true
+      }
     }
   ],
-  "achievements": [
+  "recognition": [
     {
-      "title": "1st Place FIT 2024 - Mobile Dev",
-      "description": "National Champion. Developed a Smart Parking System for Smart Cities. Led the team as Product Manager and lead presenter.",
+      "title": "1st place, FIT 2024 mobile development",
+      "type": "Award",
+      "description": "My team won first place nationally with a smart-parking system. I was the product manager and lead presenter.",
       "image_file": "Juara 1 FIT.jpg"
     },
     {
-      "title": "Global Korean Scholarship Awardee",
-      "description": "Selected for South Korean government-funded exchange at Dongseo University, Busan, fostering international technical collaboration.",
+      "title": "Global Korea Scholarship",
+      "type": "Scholarship",
+      "description": "Korean government scholarship for an exchange semester at Dongseo University, Busan.",
       "image_file": "Me GKS at DSU.jpg"
+    },
+    {
+      "title": "IBM Introduction to Artificial Intelligence",
+      "type": "Certification",
+      "description": "Course on the basics of AI, machine learning and neural networks.",
+      "image_file": "IBM Course.jpg"
+    },
+    {
+      "title": "Microsoft Learn foundations credential",
+      "type": "Certification",
+      "description": "Earned while working on a SharePoint automation project at EY-Parthenon.",
+      "image_file": "Credentials MS Foundation - MarcellJW-6681 _ Microsoft Learn.jpg"
     }
   ],
   "projects": [
     {
-      "title": "OsteoMaxNet: IBM Evolution",
+      "slug": "osteomaxnet",
+      "title": "OsteoMaxNet",
+      "subtitle": "Medical-imaging classifier rebuilt on IBM infrastructure",
       "category": "Data Science",
-      "description": "An evolution of my final university project implemented in IBM, focusing on scaling classification accuracy and system performance.",
-      "tags": ["IBM", "AI Evolution", "Optimization", "Scalability"],
+      "description": "A follow-up to my thesis, rebuilt on IBM infrastructure. The goals are higher classification accuracy and running the model at scale.",
+      "tags": [
+        "Computer Vision",
+        "Deep Learning",
+        "IBM",
+        "Optimization"
+      ],
       "link": "",
+      "link_label": "",
       "image_file": "OsteoMaxNet.jpg"
     },
     {
-      "title": "NasnetMobile: Knee Osteoarthritis Classification",
+      "slug": "knee-osteoarthritis-nasnetmobile",
+      "title": "Knee Osteoarthritis Classification",
+      "subtitle": "X-ray severity classification with NASNetMobile, published in JAIC",
       "category": "Data Science",
-      "description": "Final University Project at Universitas Ciputra. Evaluated preprocessing techniques on Nasnetmobile performance for X-ray image-based Knee Osteoarthritis classification. Resulted in a published research paper.",
-      "tags": ["Computer Vision", "Deep Learning", "NasnetMobile", "University"],
+      "description": "My undergraduate thesis at Universitas Ciputra. I tested how different image preprocessing techniques change NASNetMobile's accuracy when it classifies knee osteoarthritis severity from X-rays. The paper was published in the Journal of Applied Informatics and Computing (JAIC).",
+      "tags": [
+        "Computer Vision",
+        "TensorFlow",
+        "NASNetMobile",
+        "Research"
+      ],
       "link": "https://jurnal.polibatam.ac.id/index.php/JAIC/article/view/8713",
+      "link_label": "Read the paper",
       "image_file": "MarcellJW - Alt-TA Publikasi Jurnal Poster V2.jpg"
     },
     {
+      "slug": "used-car-price-prediction",
       "title": "Used Car Price Prediction",
+      "subtitle": "Price regression on market data, published in IJCIS",
       "category": "Data Science",
-      "description": "Research paper detailing a Machine Learning model built using Python and Pandas to predict used car prices based on multi-dimensional market features.",
-      "tags": ["Python", "Machine Learning", "Pandas", "Research"],
+      "description": "A machine learning study that predicts used-car prices from market data, built in Python with Pandas. The paper was published in the International Journal of Computer and Information System (IJCIS).",
+      "tags": [
+        "Python",
+        "Machine Learning",
+        "Pandas",
+        "Research"
+      ],
       "link": "https://www.ijcis.net/index.php/ijcis/article/view/147",
+      "link_label": "Read the paper",
       "image_file": "Used Car Price Prediction Front Page.jpg"
     },
     {
-      "title": "FEAR - iOS Application",
+      "slug": "fear-ios",
+      "title": "FEAR",
+      "subtitle": "Augmented-reality exposure therapy app for iOS",
       "category": "Software",
-      "description": "Developed an iOS application at the Apple Developer Academy focusing on user-centered design and robust Swift implementation.",
-      "tags": ["Swift", "iOS", "Xcode", "UI/UX"],
+      "description": "My final project at the Apple Developer Academy. FEAR is an iOS app that uses augmented reality for gradual exposure therapy. We built it in Swift and SwiftUI and based the design on user research.",
+      "tags": [
+        "Swift",
+        "SwiftUI",
+        "AR",
+        "iOS"
+      ],
       "link": "",
+      "link_label": "",
       "image_file": "FEAR - Apple Developer Academy Final Project.jpg"
     },
     {
-      "title": "Tetandingan UI/UX",
+      "slug": "tetandingan",
+      "title": "Tetandingan",
+      "subtitle": "3D guide to traditional offerings",
       "category": "Software",
-      "description": "Design and prototyping challenge completed during the Apple Developer Academy, emphasizing usability heuristics and intuitive mobile interactions.",
-      "tags": ["Figma", "UI/UX", "Prototyping"],
+      "description": "A design and prototyping challenge at the Apple Developer Academy. Tetandingan is a 3D guide to traditional offerings, designed around mobile usability heuristics.",
+      "tags": [
+        "Figma",
+        "UI/UX",
+        "Prototyping",
+        "iOS"
+      ],
       "link": "",
+      "link_label": "",
       "image_file": "Tetandingan - Apple Developer Academy UI UX Challenge.jpg"
-    },
-    {
-      "title": "Microsoft Enterprise Automation",
-      "category": "Certification",
-      "description": "Spearheaded contributions to a Microsoft-based automation project at EY-Parthenon. Optimized operational continuity and knowledge access through robust system handovers and strategic SharePoint utilization.",
-      "tags": ["SharePoint", "Automation", "Strategy", "Microsoft"],
-      "link": "",
-      "image_file": "Credentials MS Foundation - MarcellJW-6681 _ Microsoft Learn.jpg"
-    },
-    {
-      "title": "IBM Introduction to AI",
-      "category": "Certification",
-      "description": "Professional certification from IBM covering the foundational concepts of Artificial Intelligence, machine learning, and neural networks.",
-      "tags": ["IBM", "Artificial Intelligence", "Foundations"],
-      "link": "",
-      "image_file": "IBM Course.jpg"
     }
-  ]
+  ],
+  "timeline": {
+    "lanes": [
+      {
+        "id": "data",
+        "name": "Data science"
+      },
+      {
+        "id": "strategy",
+        "name": "Strategy"
+      },
+      {
+        "id": "software",
+        "name": "Software engineering"
+      }
+    ],
+    "items": [
+      {
+        "id": "gks",
+        "kind": "span",
+        "lanes": [
+          "data"
+        ],
+        "from": 2023.58,
+        "to": 2024.0,
+        "short": "GKS",
+        "title": "Global Korea Scholarship",
+        "period": "Aug to Dec 2023",
+        "detail": "Exchange semester at Dongseo University, Busan. Courses in deep learning, computer vision and cloud computing.",
+        "href": "#experience",
+        "logo": {
+          "file": "org-dongseo-mark.png",
+          "width": 104,
+          "height": 48,
+          "invert": true
+        }
+      },
+      {
+        "id": "apple",
+        "kind": "span",
+        "lanes": [
+          "software"
+        ],
+        "from": 2024.17,
+        "to": 2025.0,
+        "short": "Apple Developer Academy",
+        "title": "Apple Developer Academy",
+        "period": "Mar to Dec 2024",
+        "detail": "iOS developer. Built FEAR and Tetandingan in Swift and SwiftUI.",
+        "href": "#experience",
+        "logo": {
+          "file": "org-apple.svg",
+          "width": 24,
+          "height": 24
+        }
+      },
+      {
+        "id": "fit",
+        "kind": "point",
+        "lanes": [
+          "software"
+        ],
+        "at": 2024.62,
+        "short": "FIT 2024",
+        "title": "First place at FIT 2024",
+        "period": "2024",
+        "detail": "National mobile development competition. My team built a smart-parking system. I was product manager and lead presenter.",
+        "href": "#background"
+      },
+      {
+        "id": "ey",
+        "kind": "span",
+        "lanes": [
+          "strategy"
+        ],
+        "from": 2025.0,
+        "to": 2025.42,
+        "short": "EY-Parthenon",
+        "title": "Strategy consultant at EY-Parthenon",
+        "period": "Jan to May 2025",
+        "detail": "Commercial due diligence for Japanese buyers. I built the market and financial models.",
+        "href": "#experience",
+        "logo": {
+          "file": "org-ey-parthenon.svg",
+          "width": 171,
+          "height": 55,
+          "wordmark": true
+        }
+      },
+      {
+        "id": "jaic",
+        "kind": "point",
+        "lanes": [
+          "data"
+        ],
+        "at": 2025.4,
+        "short": "Thesis published",
+        "title": "Thesis published in JAIC",
+        "period": "2025",
+        "detail": "Knee osteoarthritis severity classification from X-rays with NASNetMobile.",
+        "href": "/project/knee-osteoarthritis-nasnetmobile"
+      },
+      {
+        "id": "metrodata",
+        "kind": "span",
+        "lanes": [
+          "data",
+          "strategy",
+          "software"
+        ],
+        "from": 2025.75,
+        "to": null,
+        "short": "Metrodata",
+        "title": "Data scientist at Metrodata",
+        "period": "Oct 2025 to now",
+        "detail": "Snowflake and Databricks projects for enterprise clients. I'm building a financial analytics platform for a Japanese company and lead its front-end.",
+        "href": "#experience",
+        "roles": {
+          "data": "Snowflake and Databricks",
+          "strategy": "Technical pre-sales",
+          "software": "Front-end lead"
+        },
+        "logo": {
+          "file": "org-metrodata-mark.png",
+          "width": 106,
+          "height": 66
+        }
+      }
+    ]
+  }
 }

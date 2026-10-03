@@ -1,87 +1,132 @@
-import data from "../../data.json";
+import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
+import { notFound } from "next/navigation";
+import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
+import { asset, getProject, site, toneOf } from "@/lib/data";
+import { cn } from "@/lib/utils";
+import Footer from "../../components/Footer";
+import Navbar from "../../components/Navbar";
+import Section from "../../components/Section";
 
-export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
-  const decodedTitle = decodeURIComponent(slug);
-  const project = data.projects.find(p => p.title === decodedTitle);
+type Props = { params: Promise<{ slug: string }> };
 
-  if (!project) {
-    return (
-      <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '2rem' }}>
-        <h2 style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '2rem' }}>Project not found</h2>
-        <Link href="/" className="btn primary-btn">Back to Home</Link>
-      </div>
-    );
-  }
+export const dynamicParams = false;
 
-  const getCategoryColor = (category: string) => {
-    switch (category) {
-      case 'Data Science': return 'emerald';
-      case 'Software': return 'sky';
-      case 'Certification': return 'amber';
-      default: return 'slate';
-    }
+export function generateStaticParams() {
+  return site.projects.map((p) => ({ slug: p.slug }));
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const project = getProject((await params).slug);
+  if (!project) return {};
+  return {
+    title: project.title,
+    description: project.description,
+    openGraph: { title: project.title, description: project.subtitle, images: [asset(project.image_file)] },
   };
+}
 
-  const color = getCategoryColor(project.category);
+const delay = (ms: number) => ({ "--d": `${ms}ms` }) as React.CSSProperties;
+
+export default async function ProjectPage({ params }: Props) {
+  const { slug } = await params;
+  const project = getProject(slug);
+  if (!project) notFound();
+
+  const tone = toneOf(project.category);
+  const index = site.projects.findIndex((p) => p.slug === slug);
+  const next = site.projects[(index + 1) % site.projects.length];
 
   return (
-    <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '6rem 2rem' }}>
-      <Link href="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', fontWeight: 800, color: 'var(--text-muted)', textDecoration: 'none', marginBottom: '4rem', textTransform: 'uppercase', fontSize: '0.8rem', letterSpacing: '0.1em' }}>
-        ← Back to Home
-      </Link>
-      
-      <div style={{ background: 'rgba(255, 255, 255, 0.7)', backdropFilter: 'blur(15px)', borderRadius: '2rem', padding: '4rem', border: '1px solid rgba(255, 255, 255, 0.5)', boxShadow: '0 20px 40px -10px rgba(0,0,0,0.1)' }}>
-        <div style={{ marginBottom: '4rem' }}>
-          <span className={`tag bg-${color}`} style={{ padding: '0.5rem 1.25rem', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.2em', marginBottom: '2rem' }}>
-            {project.category}
-          </span>
-          <h1 style={{ fontSize: '4.5rem', fontWeight: 800, color: 'var(--text-main)', marginBottom: '2rem', lineHeight: 1.1 }}>
-            {project.title}
-          </h1>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem' }}>
-            {project.tags.map(tag => (
-              <span key={tag} className={`tag bg-${color}`} style={{ background: 'white', color: `var(--${color})`, border: '1px solid #e2e8f0' }}>
-                {tag}
-              </span>
-            ))}
-          </div>
-        </div>
-
-        <div style={{ background: '#f1f5f9', padding: '3rem', borderRadius: '2rem', marginBottom: '4rem', boxShadow: 'inset 0 2px 4px 0 rgba(0,0,0,0.05)' }}>
-          <img 
-            src={`/assets/${encodeURIComponent(project.image_file)}`} 
-            alt={project.title} 
-            style={{ width: '100%', height: 'auto', maxHeight: '600px', objectFit: 'contain', borderRadius: '1rem', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}
-          />
-        </div>
-
-        <div style={{ maxWidth: '800px' }}>
-          <h3 style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '1.5rem' }}>Project Overview</h3>
-          <p style={{ fontSize: '1.2rem', color: 'var(--text-muted)', lineHeight: 1.8, marginBottom: '4rem' }}>
-            {project.description}
-          </p>
-        </div>
-
-        {project.link && (
-          <div style={{ padding: '4rem', borderRadius: '2.5rem', background: `rgba(var(--${color}-rgb, 14, 165, 233), 0.05)`, border: '1px solid rgba(0,0,0,0.05)', textAlign: 'center' }}>
-            <h3 style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '1.5rem' }}>External Resources</h3>
-            <p style={{ color: 'var(--text-muted)', marginBottom: '2.5rem', maxWidth: '500px', margin: '0 auto 2.5rem auto' }}>
-              Explore the full publication or external repository to see the complete work and research behind this project.
-            </p>
-            <a 
-              href={project.link} 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className={`btn primary-btn`}
-              style={{ background: `var(--${color}, #0ea5e9)`, padding: '1rem 3rem', fontSize: '1.1rem' }}
+    <>
+      <Navbar />
+      <main id="top" className="frame">
+        <section className="relative isolate">
+          <div className="pad pb-12 pt-10 sm:pt-14">
+            <Link
+              href="/#work"
+              className="group inline-flex items-center gap-2 text-sm font-medium text-muted transition-colors hover:text-ink"
             >
-              Open Official Resource
-            </a>
+              <ArrowLeft size={16} className="transition-transform duration-300 group-hover:-translate-x-0.5" />
+              Back to projects
+            </Link>
+
+            <h1
+              className="rise mt-10 max-w-3xl text-balance text-4xl font-medium leading-[1.08] tracking-[-0.03em] sm:text-5xl"
+              style={delay(0)}
+            >
+              {project.title}
+            </h1>
+            <p className="rise mt-4 flex max-w-2xl gap-2.5 text-pretty text-lg text-muted" style={delay(80)}>
+              <span className={cn("mt-[0.55rem] h-2.5 w-2.5 shrink-0 rounded-full", tone.dot)}>
+                <span className="sr-only">{project.category} project:</span>
+              </span>
+              {project.subtitle}
+            </p>
           </div>
-        )}
-      </div>
-    </div>
+        </section>
+
+        <Section>
+          <div className="pad py-8">
+            <div
+              className="rise surface relative aspect-[16/10] overflow-hidden"
+              style={delay(160)}
+            >
+              <Image
+                src={asset(project.image_file)}
+                alt={`${project.title}: ${project.subtitle}`}
+                fill
+                preload
+                sizes="(min-width: 76rem) 71rem, 100vw"
+                className="object-contain p-4 sm:p-8"
+              />
+            </div>
+          </div>
+        </Section>
+
+        <Section>
+          <div className="grid grid-cols-1 md:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
+            <div className="pad pb-2 pt-8 md:py-10">
+              <h2 className="text-xl font-medium">About the project</h2>
+              <p className="mt-2 text-sm text-muted">{project.tags.join(", ")}</p>
+            </div>
+            <div className="pad pb-10 pt-2 md:py-10">
+              <p className="max-w-2xl text-pretty text-lg leading-relaxed">{project.description}</p>
+              {project.link && (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-8 inline-flex h-11 items-center gap-2 rounded-full bg-ink px-5 font-medium text-white transition-colors duration-300 hover:bg-primary-dark"
+                >
+                  {project.link_label}
+                  <ArrowUpRight size={17} aria-hidden="true" />
+                  <span className="sr-only">(opens in a new tab)</span>
+                </a>
+              )}
+            </div>
+          </div>
+        </Section>
+
+        <Section>
+          <Link
+            href={`/project/${next.slug}`}
+            className="group mx-5 flex items-center justify-between gap-6 rounded-[1.75rem] bg-white/70 px-6 py-8 shadow-[0_1px_2px_rgba(15,42,68,0.06)] transition-colors hover:bg-white sm:mx-10 sm:px-8"
+          >
+            <span>
+              <span className="block text-sm text-muted">Next project</span>
+              <span className="mt-1 block text-2xl font-medium tracking-tight">{next.title}</span>
+            </span>
+            <ArrowRight
+              size={20}
+              aria-hidden="true"
+              className="shrink-0 transition-transform duration-300 group-hover:translate-x-1"
+            />
+          </Link>
+        </Section>
+      </main>
+      <Footer />
+    </>
   );
 }
