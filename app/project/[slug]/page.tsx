@@ -4,7 +4,7 @@ import Link from "next/link";
 export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const decodedTitle = decodeURIComponent(slug);
-  const project = data.projects.find(p => p.title === decodedTitle);
+  const project = data.projects.find(p => p.slug === slug || p.title === decodedTitle);
 
   if (!project) {
     return (
