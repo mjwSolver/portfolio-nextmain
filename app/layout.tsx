@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.VERCEL_PROJECT_PRODUCTION_URL
       ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-      : "http://localhost:3000",
+      : "https://marcelljw.vercel.app",
   ),
   title: {
     default: "Marcell Jeremy Wiradinata | Data Scientist & Software Engineer",
