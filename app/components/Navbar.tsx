@@ -8,10 +8,11 @@ import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
-  { label: "Expertise", id: "expertise" },
-  { label: "Work", id: "work" },
+  { label: "Building", id: "building" },
+  { label: "Projects", id: "work" },
   { label: "Experience", id: "experience" },
-  { label: "About", id: "about" },
+  { label: "Skills", id: "skills" },
+  { label: "Education", id: "background" },
 ] as const;
 
 export default function Navbar() {
@@ -24,9 +25,9 @@ export default function Navbar() {
   // Scroll-spy via IntersectionObserver (no layout reads on every scroll event).
   useEffect(() => {
     if (!isHome) return;
-    const sections = NAV_LINKS.map((l) => document.getElementById(l.id)).filter(
-      (el): el is HTMLElement => el !== null,
-    );
+    const sections = [...NAV_LINKS.map((l) => l.id), "contact"]
+      .map((id) => document.getElementById(id))
+      .filter((el): el is HTMLElement => el !== null);
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -73,26 +74,23 @@ export default function Navbar() {
   const href = (id: string) => (isHome ? `#${id}` : `/#${id}`);
 
   return (
-    <header className="fixed inset-x-0 top-3 z-50 px-3 sm:top-4">
+    <header className="sticky top-3 z-50 px-3 sm:top-4">
       <nav
         aria-label="Primary"
         className={cn(
-          "mx-auto flex max-w-5xl items-center justify-between gap-2 rounded-full border py-2 pl-2 pr-2 backdrop-blur-xl transition-[background-color,border-color,box-shadow] duration-500",
+          "mx-auto flex h-14 max-w-5xl items-center justify-between gap-4 rounded-full pl-3 pr-2 backdrop-blur-xl transition-[background-color,box-shadow] duration-500",
           scrolled || open
-            ? "border-line bg-white/80 shadow-[0_8px_30px_-12px_rgba(11,19,36,0.18)]"
-            : "border-transparent bg-white/40",
+            ? "bg-white/80 shadow-[0_10px_30px_-12px_rgba(15,42,68,0.25)]"
+            : "bg-white/50",
         )}
       >
         <Link
           href={isHome ? "#top" : "/"}
-          className="group flex items-center gap-2.5 rounded-full py-1 pl-1 pr-3"
+          className="flex items-center gap-2.5 rounded-full"
           onClick={() => setOpen(false)}
         >
-          <span className="relative grid h-8 w-8 place-items-center rounded-full bg-ink font-mono text-[11px] font-semibold tracking-tight text-white transition-transform duration-500 ease-out-expo group-hover:rotate-[-8deg]">
-            MJ
-            <span className="absolute -right-0.5 -top-0.5 h-2.5 w-2.5 rounded-full border-2 border-white bg-primary" />
-          </span>
-          <span className="hidden text-sm font-semibold tracking-tight sm:inline">Marcell J. Wiradinata</span>
+          <span className="grid h-7 w-7 place-items-center rounded-full bg-ink text-[11px] font-semibold text-white">MJ</span>
+          <span className="text-[15px] font-medium">Marcell J. Wiradinata</span>
         </Link>
 
         <ul className="hidden items-center gap-1 md:flex">
@@ -104,7 +102,7 @@ export default function Navbar() {
                   href={href(link.id)}
                   aria-current={isActive ? "true" : undefined}
                   className={cn(
-                    "relative isolate block rounded-full px-4 py-2 text-sm font-medium transition-colors duration-300",
+                    "relative isolate block rounded-full px-3.5 py-1.5 text-sm transition-colors duration-300",
                     isActive ? "text-ink" : "text-muted hover:text-ink",
                   )}
                 >
@@ -125,9 +123,9 @@ export default function Navbar() {
         <div className="flex items-center gap-1.5">
           <a
             href={href("contact")}
-            className="hidden rounded-full bg-ink px-4 py-2 text-sm font-medium text-white transition-colors duration-300 hover:bg-primary-dark sm:inline-block"
+            className="hidden rounded-full bg-ink px-4 py-1.5 text-sm font-medium text-white transition-colors duration-300 hover:bg-primary-dark sm:inline-block"
           >
-            Get in touch
+            Contact
           </a>
           <button
             type="button"
@@ -146,13 +144,13 @@ export default function Navbar() {
         {open && (
           <motion.div
             id="mobile-menu"
-            initial={{ opacity: 0, y: -8, scale: 0.98 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -8, scale: 0.98 }}
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25 }}
-            className="mx-auto mt-2 max-w-5xl origin-top rounded-3xl border border-line bg-white/95 p-2 shadow-[0_20px_40px_-20px_rgba(11,19,36,0.25)] backdrop-blur-xl md:hidden"
+            className="mx-auto mt-2 max-w-5xl overflow-hidden rounded-3xl bg-white/90 shadow-[0_20px_40px_-20px_rgba(15,42,68,0.3)] backdrop-blur-xl md:hidden"
           >
-            <ul className="flex flex-col">
+            <ul className="flex flex-col p-2">
               {[...NAV_LINKS, { label: "Contact", id: "contact" }].map((link) => (
                 <li key={link.id}>
                   <a
@@ -164,7 +162,6 @@ export default function Navbar() {
                     )}
                   >
                     {link.label}
-                    <span className="font-mono text-xs text-muted">#{link.id}</span>
                   </a>
                 </li>
               ))}
